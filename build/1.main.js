@@ -7,10 +7,10 @@ webpackJsonp([1],{
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index__ = __webpack_require__(387);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index__ = __webpack_require__(385);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__custom_page__ = __webpack_require__(375);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__custom_page__ = __webpack_require__(373);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomPageModule", function() { return CustomPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -59,8 +59,8 @@ CustomPageModule = __decorate([
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(44);
 var http_1 = __webpack_require__(14);
-var index_1 = __webpack_require__(641);
-var Utils_1 = __webpack_require__(386);
+var index_1 = __webpack_require__(639);
+var Utils_1 = __webpack_require__(384);
 var DYNAMIC_SELECTOR = 'DynamicComponent';
 var DynamicComponentMetadata = (function () {
     function DynamicComponentMetadata(selector, template) {
@@ -273,15 +273,16 @@ exports.PropertyAnnotationFactory = PropertyAnnotationFactory;
 
 /***/ }),
 
-/***/ 375:
+/***/ 373:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_header_logo_header_logo__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__ = __webpack_require__(62);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -298,6 +299,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+/*
+ * Uses dynamic component creation, see https://github.com/apoterenko/angular2-dynamic-component
+ */
 var DynamicContext = (function () {
     function DynamicContext() {
     }
@@ -306,11 +311,9 @@ var DynamicContext = (function () {
     };
     return DynamicContext;
 }());
-/*
- * Uses dynamic component creation, see https://github.com/apoterenko/angular2-dynamic-component
- */
+/** Development mode only -- END */
 var CustomPage = (function () {
-    function CustomPage(navParams, nav, modalCtrl, renderer, elementRef, viewCtrl, platform, translate, storage, events, toastCtrl, headerLogoService) {
+    function CustomPage(navParams, nav, modalCtrl, renderer, elementRef, viewCtrl, platform, translate, storage, events, toastCtrl, globalvars, headerLogoService) {
         var _this = this;
         this.navParams = navParams;
         this.nav = nav;
@@ -323,95 +326,44 @@ var CustomPage = (function () {
         this.storage = storage;
         this.events = events;
         this.toastCtrl = toastCtrl;
+        this.globalvars = globalvars;
         this.headerLogoService = headerLogoService;
         this.rtlBack = false;
         this.extraModules = [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* IonicModule */], __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["a" /* TranslateModule */]];
-        this.showSegments = false;
+        this.show_segments = false;
         this.show_header_logo = false;
+        /** Development mode only -- START */
         this.inputData = {
             // anything that the template needs access to goes here
-            pages: JSON.parse(window.localStorage.getItem('myappp')),
-            segments: JSON.parse(window.localStorage.getItem('segments')),
+            pages: this.getPages(),
+            segments: this.getSegments(),
             pushPage: function (page) {
-                if (page.target === '_blank' && page.extra_classes.indexOf('system') >= 0) {
-                    window.open(page.url, '_system', null);
-                    return;
-                }
-                else if (page.target === '_blank') {
-                    window.open(page.url, page.target, null);
-                    return;
-                }
-                var opt = {};
-                if (_this.platform.isRTL && _this.platform.is('ios'))
-                    opt = { direction: 'back' };
-                if (page.type === 'apppages' && page.page_type === 'list') {
-                    _this.nav.push('PostList', page, opt);
-                }
-                else if (page.type === 'apppages') {
-                    _this.nav.push('CustomPage', page, opt);
-                }
-                else if (page.url) {
-                    _this.nav.push('Iframe', page, opt);
-                }
-                else {
-                    _this.nav.push(page.component, page.navparams, opt);
-                }
+                _this.pushPage(page);
             },
             openPage: function (page) {
-                if (page.target === '_blank' && page.extra_classes.indexOf('system') >= 0) {
-                    window.open(page.url, '_system', null);
-                    return;
-                }
-                else if (page.target === '_blank') {
-                    window.open(page.url, page.target, null);
-                    return;
-                }
-                if (page.type === 'apppages' && page.page_type === 'list') {
-                    _this.nav.setRoot('PostList', page);
-                }
-                else if (page.type === 'apppages') {
-                    _this.nav.setRoot('CustomPage', page);
-                }
-                else if (page.url) {
-                    _this.nav.setRoot('Iframe', page);
-                }
-                else {
-                    _this.nav.setRoot(page.component, page.navparams);
-                }
+                _this.openPage(page);
             },
             back: function () {
-                _this.nav.pop();
+                _this.back();
             },
             mediaModal: function (src, img) {
                 if (img === void 0) { img = null; }
-                var modal = _this.modalCtrl.create('MediaPlayer', { source: src, image: img });
-                modal.present();
+                _this.mediaModal(src, img);
             },
             updateData: function () {
-                window.localStorage.removeItem('myappp');
-                _this.storage.remove('segments');
-                _this.events.publish('data:update', true);
+                _this.updateData();
             },
             changeRTL: function (event, rtl) {
-                if (rtl) {
-                    _this.platform.setDir('rtl', true);
-                }
-                else {
-                    _this.platform.setDir('ltr', true);
-                }
-                _this.storage.set('is_rtl', rtl);
+                _this.changeRTL(event, rtl);
             },
             showSegments: function () {
-                var modal = _this.modalCtrl.create('PushSettings');
-                modal.present();
+                _this.showSegments();
             },
             showLanguages: function () {
-                var modal = _this.modalCtrl.create('LanguageSettings');
-                modal.present();
+                _this.showLanguages();
             },
             loginModal: function () {
-                _this.loginModal = _this.modalCtrl.create('LoginModal');
-                _this.loginModal.present();
+                _this.loginModal();
             }
         };
         this.pagetitle = navParams.data.title;
@@ -422,14 +374,21 @@ var CustomPage = (function () {
         if (platform.is('android')) {
             this.killVideos();
         }
+        this.pages = this.getPages(); // not just pages: this is the whole myappp data
+        this.menus = {
+            side: this.getSideMenu(),
+            tabs: this.getTabs()
+        };
+        this.segments = this.getSegments();
     }
+    /** Development mode only -- END */
     CustomPage.prototype.ngOnInit = function () {
-        // console.log(this.navParams);
-        // set our custom template url
         var slug = this.navParams.data.slug;
         this.slug = slug;
+        /** Development mode only -- START */
         // this.templateUrl = 'custom.html'
         this.templateUrl = 'build/' + slug + '.html?' + this.random(1, 999);
+        /** Development mode only -- END */
         this.customClasses = 'custom-page page-' + this.slug;
         this.listener();
     };
@@ -444,7 +403,12 @@ var CustomPage = (function () {
         this.listenFunc = this.renderer.listen(this.elementRef.nativeElement, 'click', function (event) {
             if (event.target.href && event.target.href.indexOf('http') >= 0) {
                 event.preventDefault();
-                window.open(event.target.href, '_blank');
+                if (event.target.target && event.target.target) {
+                    window.open(event.target.href, event.target.target);
+                }
+                else {
+                    window.open(event.target.href, '_blank');
+                }
             }
         });
     };
@@ -505,13 +469,198 @@ var CustomPage = (function () {
             //console.log(e)
         });
     };
+    /**
+     * Get side menu index by page slug
+     */
+    CustomPage.prototype.getMenuIndexBySlug = function (slug) {
+        return this.getIndexBySlug(slug, this.menus.side);
+    };
+    /**
+     * Get tab menu index by page slug
+     * @param slug page slug
+     */
+    CustomPage.prototype.getTabIndexBySlug = function (slug) {
+        return this.getIndexBySlug(slug, this.menus.tabs);
+    };
+    /**
+     * Side or tab menus
+     * @param slug page slug
+     * @param pages menu or tab pages
+     */
+    CustomPage.prototype.getIndexBySlug = function (slug, pages) {
+        var menu_index;
+        var count = 0;
+        if (!pages)
+            return menu_index;
+        for (var _i = 0, pages_1 = pages; _i < pages_1.length; _i++) {
+            var page = pages_1[_i];
+            if (page.slug && page.slug == slug) {
+                menu_index = count;
+            }
+            count++;
+        }
+        ;
+        if (!menu_index && menu_index !== 0)
+            console.log(pages); // you can find the slugs here
+        return menu_index;
+    };
+    /**
+     * Search both menus for a page
+     *
+     * @param page_slug
+     */
+    CustomPage.prototype.getPage = function (page_slug) {
+        var _this = this;
+        var menu_index;
+        var page;
+        menu_index = this.getMenuIndexBySlug(page_slug);
+        if (menu_index || menu_index === 0) {
+            return this.menus.side[menu_index];
+        }
+        menu_index = this.getTabIndexBySlug(page_slug);
+        if (menu_index || menu_index === 0) {
+            return this.menus.tabs[menu_index];
+        }
+        // otherwise . . .
+        this.translate.get('Page not found').subscribe(function (text) {
+            _this.presentToast(text);
+        });
+        return false;
+    };
+    /**
+     * Adds a view on top of root view (w/ backbutton)
+     *
+     * @param page
+     */
+    CustomPage.prototype.pushPage = function (page) {
+        if (typeof page === 'string') {
+            page = this.getPage(page);
+            if (page === false)
+                return;
+        }
+        if (page.target === '_blank' && page.extra_classes.indexOf('system') >= 0) {
+            window.open(page.url, '_system', null);
+            return;
+        }
+        else if (page.target === '_blank') {
+            window.open(page.url, page.target, null);
+            return;
+        }
+        var opt = {};
+        if (this.platform.isRTL && this.platform.is('ios'))
+            opt = { direction: 'back' };
+        if (page.type === 'apppages' && page.page_type === 'list') {
+            this.nav.push('PostList', page, opt);
+        }
+        else if (page.type === 'apppages') {
+            this.nav.push(this.getPageModuleName(page.page_id), page, opt);
+        }
+        else if (page.url) {
+            this.nav.push('Iframe', page, opt);
+        }
+        else {
+            this.nav.push(page.component, page.navparams, opt);
+        }
+    };
+    /**
+     * Set a root view
+     *
+     * @param page
+     */
+    CustomPage.prototype.openPage = function (page) {
+        if (typeof page === 'string') {
+            page = this.getPage(page);
+            if (page === false)
+                return;
+        }
+        if (page.target === '_blank' && page.extra_classes.indexOf('system') >= 0) {
+            window.open(page.url, '_system', null);
+            return;
+        }
+        else if (page.target === '_blank') {
+            window.open(page.url, page.target, null);
+            return;
+        }
+        if (page.type === 'apppages' && page.page_type === 'list') {
+            this.nav.setRoot('PostList', page);
+        }
+        else if (page.type === 'apppages') {
+            this.nav.setRoot(this.getPageModuleName(page.page_id), page);
+        }
+        else if (page.url) {
+            this.nav.setRoot('Iframe', page);
+        }
+        else {
+            this.nav.setRoot(page.component, page.navparams);
+        }
+    };
+    CustomPage.prototype.back = function () {
+        this.nav.pop();
+    };
+    CustomPage.prototype.mediaModal = function (src, img) {
+        if (img === void 0) { img = null; }
+        var modal = this.modalCtrl.create('MediaPlayer', { source: src, image: img });
+        modal.present();
+    };
+    CustomPage.prototype.updateData = function () {
+        window.localStorage.removeItem('myappp');
+        this.storage.remove('segments');
+        this.events.publish('data:update', true);
+    };
+    CustomPage.prototype.changeRTL = function (event, rtl) {
+        if (rtl) {
+            this.platform.setDir('rtl', true);
+        }
+        else {
+            this.platform.setDir('ltr', true);
+        }
+        this.storage.set('is_rtl', rtl);
+    };
+    CustomPage.prototype.showSegments = function () {
+        var modal = this.modalCtrl.create('PushSettings');
+        modal.present();
+    };
+    CustomPage.prototype.showLanguages = function () {
+        var modal = this.modalCtrl.create('LanguageSettings');
+        modal.present();
+    };
+    CustomPage.prototype.loginModal = function () {
+        this.login_modal = this.modalCtrl.create('LoginModal');
+        this.login_modal.present();
+    };
+    CustomPage.prototype.getPages = function () {
+        if (!this.pages) {
+            this.pages = JSON.parse(window.localStorage.getItem('myappp'));
+        }
+        return this.pages;
+    };
+    CustomPage.prototype.getSegments = function () {
+        if (!this.segments)
+            this.segments = JSON.parse(window.localStorage.getItem('segments'));
+        return this.segments;
+    };
+    CustomPage.prototype.getSideMenu = function () {
+        var myappp = JSON.parse(window.localStorage.getItem('myappp'));
+        return myappp.menus.items;
+    };
+    CustomPage.prototype.getTabs = function () {
+        var myappp = JSON.parse(window.localStorage.getItem('myappp'));
+        return myappp.tab_menu.items;
+    };
+    CustomPage.prototype.getPageModuleName = function (page_id) {
+        console.log('isInProductionMode', this.globalvars.isInProductionMode);
+        if (this.globalvars.isInProductionMode)
+            return 'Page' + page_id;
+        else
+            return 'CustomPage';
+    };
     return CustomPage;
 }());
 CustomPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])({
         priority: 'high'
     }),
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/macintosh/Documents/devapp/Properti-Go/src/pages/custom-pages/custom-page.html"*/'<ion-header>\n\n  <ion-navbar>\n\n	<ion-buttons start>\n		<button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">\n			<ion-icon name="arrow-back"></ion-icon>\n			{{\'Back\' | translate }}\n		</button>\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n\n	</ion-buttons>\n\n	<img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    <ion-title *ngIf="!show_header_logo">{{pagetitle | translate}}</ion-title>\n\n  </ion-navbar>\n</ion-header>\n\n<ion-content [ngClass]="customClasses">\n\n<DynamicComponent \n    [componentTemplateUrl]="templateUrl" \n    [componentModules]="extraModules"\n    [componentInputData]="inputData"></DynamicComponent>\n\n</ion-content>\n'/*ion-inline-end:"/Users/macintosh/Documents/devapp/Properti-Go/src/pages/custom-pages/custom-page.html"*/
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/matt/projects/appp/ap3/src/pages/custom-pages/custom-page.html"*/'<ion-header>\n\n  <ion-navbar>\n\n	<ion-buttons start>\n		<button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">\n			<ion-icon name="arrow-back"></ion-icon>\n			{{\'Back\' | translate }}\n		</button>\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n\n	</ion-buttons>\n\n	<img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    <ion-title *ngIf="!show_header_logo">{{pagetitle | translate}}</ion-title>\n\n  </ion-navbar>\n</ion-header>\n\n<ion-content [ngClass]="customClasses">\n\n<DynamicComponent \n    [componentTemplateUrl]="templateUrl" \n    [componentModules]="extraModules"\n    [componentInputData]="inputData"></DynamicComponent>\n\n</ion-content>\n'/*ion-inline-end:"/Users/matt/projects/appp/ap3/src/pages/custom-pages/custom-page.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Nav */],
@@ -524,6 +673,7 @@ CustomPage = __decorate([
         __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Events */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__["a" /* GlobalVars */],
         __WEBPACK_IMPORTED_MODULE_4__providers_header_logo_header_logo__["a" /* HeaderLogo */]])
 ], CustomPage);
 
@@ -531,7 +681,7 @@ CustomPage = __decorate([
 
 /***/ }),
 
-/***/ 385:
+/***/ 383:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -560,7 +710,7 @@ exports.DynamicComponentModule = DynamicComponentModule;
 
 /***/ }),
 
-/***/ 386:
+/***/ 384:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -590,7 +740,7 @@ exports.Utils = Utils;
 
 /***/ }),
 
-/***/ 387:
+/***/ 385:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -598,18 +748,18 @@ exports.Utils = Utils;
 var DynamicComponent_1 = __webpack_require__(346);
 exports.DynamicComponent = DynamicComponent_1.DynamicComponent;
 exports.DynamicComponentMetadata = DynamicComponent_1.DynamicComponentMetadata;
-var DynamicComponentModule_1 = __webpack_require__(385);
+var DynamicComponentModule_1 = __webpack_require__(383);
 exports.DynamicComponentModule = DynamicComponentModule_1.DynamicComponentModule;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 639:
+/***/ 637:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var Utils_1 = __webpack_require__(640);
+var Utils_1 = __webpack_require__(638);
 var MetadataFactory_1 = __webpack_require__(369);
 var MetadataHelper = (function () {
     function MetadataHelper() {
@@ -651,7 +801,7 @@ exports.MetadataHelper = MetadataHelper;
 
 /***/ }),
 
-/***/ 640:
+/***/ 638:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -681,12 +831,12 @@ exports.Utils = Utils;
 
 /***/ }),
 
-/***/ 641:
+/***/ 639:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var MetadataHelper_1 = __webpack_require__(639);
+var MetadataHelper_1 = __webpack_require__(637);
 exports.MetadataHelper = MetadataHelper_1.MetadataHelper;
 var MetadataFactory_1 = __webpack_require__(369);
 exports.PropertyAnnotationFactory = MetadataFactory_1.PropertyAnnotationFactory;
