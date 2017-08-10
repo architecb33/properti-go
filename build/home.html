@@ -1,1 +1,51 @@
-Home page
+<div class="headerhome"></div>
+
+<button class="menuhome" ion-button clear menuToggle>
+  <ion-icon name="menu"></ion-icon>
+</button>
+
+<ion-slides class="slideshome" pager="true" paginationType="bullets" parallax="true" autoplay="5000" effect="slide" slidesPerView="1">
+
+  <ion-slide class="slidehome">
+    <h1>Virtual Tour</h1>
+    <p>Rasakan sensasi 360° virtual reality, jelajahi setiap interior dan eksterior seakan berada di lokasi secara fisik.</p>
+    <div class="buttonwrapper">
+      <button ion-button  (click)="openPage(pages.menus.items[1])">
+        Start Tour
+      </button>
+    </div>
+  </ion-slide>
+
+  <ion-slide class="slidehome">
+      <h1>Overview</h1>
+      <p>Dapatkan informasi detail, galeri foto dan video, serta download berbagai dokumen pendukung.</p>
+      <div class="buttonwrapper">
+        <button ion-button  (click)="openPage(pages.menus.items[2])">
+          Explore
+        </button>
+      </div>
+  </ion-slide>
+
+  <ion-slide class="slidehome">
+    <h1>Products</h1>
+    <p>Cara praktis melakukan booking unit. Cek ketersediaan unit, harga dan status order secara real time.</p>
+    <div class="buttonwrapper">
+      <button ion-button  (click)="openPage(pages.menus.items[3])">
+        Book Now!
+      </button>
+    </div>
+  </ion-slide>
+
+  <ion-slide class="slidehome">
+    <h1>Updates</h1>
+    <p>Ikuti info terkini mengenai event, progress pembangunan serta berbagai promo menarik.</p>
+    <div class="buttonwrapper">
+      <button ion-button  (click)="openPage(pages.menus.items[4])">
+        Find Out
+      </button>
+    </div>
+  </ion-slide>
+
+</ion-slides>
+
+<iframe class="slidebg" width="100%" height="100%" src="assets/slidebg/slidebg.html" border=“none”>

@@ -7,8 +7,8 @@ webpackJsonp([7],{
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_modal__ = __webpack_require__(376);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_modal__ = __webpack_require__(378);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginModalModule", function() { return LoginModalModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -44,7 +44,7 @@ LoginModalModule = __decorate([
 
 /***/ }),
 
-/***/ 376:
+/***/ 378:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -53,7 +53,6 @@ LoginModalModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_wplogin_wplogin__ = __webpack_require__(244);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__(115);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginModal; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -69,16 +68,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var LoginModal = (function () {
-    function LoginModal(viewCtrl, loadingCtrl, wplogin, events, storage, translate, Device) {
+    function LoginModal(viewCtrl, loadingCtrl, wplogin, events, storage, Device) {
         var _this = this;
         this.viewCtrl = viewCtrl;
         this.loadingCtrl = loadingCtrl;
         this.wplogin = wplogin;
         this.events = events;
         this.storage = storage;
-        this.translate = translate;
         this.Device = Device;
         this.login = {};
         // login through postmessage sets login_data this way
@@ -96,15 +93,11 @@ var LoginModal = (function () {
         var _this = this;
         // if in preview, Device.platform is empty object. On device it should be string like 'iOS'
         if (typeof this.Device.platform != 'string') {
-            this.translate.get('Please try from a device.').subscribe(function (text) {
-                alert(text);
-            });
+            alert('Please try from a device.');
             return;
         }
-        this.translate.get('Please enter a valid login.').subscribe(function (text) {
-            if (!_this.login)
-                alert(text);
-        });
+        if (!this.login)
+            alert('Please enter a valid login.');
         this.showSpinner();
         this.wplogin.login(this.login).then(function (response) {
             if (response.success === false) {
@@ -121,20 +114,16 @@ var LoginModal = (function () {
         }).catch(function (e) {
             console.warn(e);
             _this.hideSpinner();
-            _this.translate.get('There was a problem connecting to the server.').subscribe(function (text) {
-                alert(text);
-            });
+            alert("There was a problem connecting to the server.");
         });
     };
     LoginModal.prototype.loginErr = function (err) {
         console.log(err);
         this.hideSpinner();
-        this.translate.get('There was a problem, please try again.').subscribe(function (text) {
-            var msg = text;
-            if (err.data && err.data.message)
-                msg += ' ' + err.data.message;
-            alert(msg);
-        });
+        var msg = "There was a problem, please try again. ";
+        if (err.data && err.data.message)
+            msg += err.data.message;
+        alert(msg);
     };
     LoginModal.prototype.doLogout = function () {
         var _this = this;
@@ -151,18 +140,14 @@ var LoginModal = (function () {
             _this.login_data = null;
             _this.hideSpinner();
             console.log(err);
-            _this.translate.get('You are logged out of the app, but there was a problem on the server.').subscribe(function (text) {
-                var msg = text;
-                if (err.data && err.data.message)
-                    msg += ' ' + err.data.message;
-                alert(msg);
-            });
+            var msg = "You are logged out of the app, but there was a problem on the server. ";
+            if (err.data && err.data.message)
+                msg += err.data.message;
+            alert(msg);
         }).catch(function (e) {
             console.warn(e);
             _this.hideSpinner();
-            _this.translate.get('There was a problem connecting to the server.').subscribe(function (text) {
-                alert(text);
-            });
+            alert("There was a problem connecting to the server.");
         });
     };
     LoginModal.prototype.setLoginData = function (data) {
@@ -184,14 +169,13 @@ var LoginModal = (function () {
 LoginModal = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-login-modal',template:/*ion-inline-start:"/Users/matt/projects/appp/ap3/src/pages/login-modal/login-modal.html"*/'<ion-header>\n\n  <ion-toolbar>\n  \n    <ion-title>{{ \'Login\' | translate }}</ion-title>\n\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()">\n        <ion-icon name="close"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n<ion-content>\n\n	<form (ngSubmit)="doLogin()" padding *ngIf="!login_data">\n      <ion-item>\n        <ion-label stacked>{{ \'Username\' | translate }}</ion-label>\n        <ion-input type="text" [(ngModel)]="login.user" name="user" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>{{ \'Password\' | translate }}</ion-label>\n        <ion-input type="password" [(ngModel)]="login.pass" name="pass" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>\n      </ion-item>\n      \n      <div padding>\n      <button ion-button type="submit" block>{{ \'Submit\' | translate }}</button>\n      </div>\n\n    </form>\n	\n	<div padding *ngIf="login_data">\n		{{login_data.message}}\n    	<button ion-button block (click)="doLogout()">{{ \'Click here to logout\' | translate }}</button>\n    </div>\n\n</ion-content>'/*ion-inline-end:"/Users/matt/projects/appp/ap3/src/pages/login-modal/login-modal.html"*/
+        selector: 'page-login-modal',template:/*ion-inline-start:"/Users/macintosh/Documents/devapp/Properti-Go/src/pages/login-modal/login-modal.html"*/'<ion-header>\n\n  <ion-toolbar>\n\n\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()">\n        <ion-icon name="close"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n<div class="loginheader"></div>\n\n<ion-content>\n\n  <form class="divpopup" (ngSubmit)="doLogin()" padding *ngIf="!login_data">\n      <ion-item>\n        <ion-label class="usernamewelcome" stacked>{{ \'Username\' | translate }}</ion-label>\n        <ion-input class="usernamename" type="text" [(ngModel)]="login.user" name="user" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label class="usernamewelcome" stacked>{{ \'Password\' | translate }}</ion-label>\n        <ion-input class="usernamename" type="password" [(ngModel)]="login.pass" name="pass" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>\n      </ion-item>\n\n      <div padding>\n      <button class="buttonpopup" ion-button type="submit" block>{{ \'Submit\' | translate }}</button>\n      </div>\n\n    </form>\n\n	<div class="divpopup" padding *ngIf="login_data">\n    <div class="usernamewelcome">{{ \'See you again soon,\' | translate }}</div>\n		<div class="usernamename">{{login_data.message}}.</div>\n    <br>\n    	<button class="buttonpopup" ion-button block (click)="doLogout()">{{ \'Click here to logout\' | translate }}</button>\n    </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/macintosh/Documents/devapp/Properti-Go/src/pages/login-modal/login-modal.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ViewController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* LoadingController */],
         __WEBPACK_IMPORTED_MODULE_2__providers_wplogin_wplogin__["a" /* WPlogin */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Events */],
         __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
-        __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__["d" /* TranslateService */],
         __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__["a" /* Device */]])
 ], LoginModal);
 
