@@ -203,15 +203,11 @@ var Iframe = (function () {
         this.loaded = true;
     };
     Iframe.prototype.showSpinner = function () {
-        var _this = this;
         this.loading = this.loadingController.create({
             showBackdrop: false,
             dismissOnPageChange: false
         });
         this.loading.present();
-        setTimeout(function () {
-            _this.loading.dismiss();
-        }, 8000);
     };
     Iframe.prototype.ionSelected = function () {
         // fires when an active menu item is pressed again, causing a refresh
@@ -429,7 +425,7 @@ __decorate([
 ], Iframe.prototype, "onMessage", null);
 Iframe = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["f" /* IonicPage */])(),
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"/Users/macintosh/Documents/devapp/Properti-Go/src/pages/iframe/iframe.html"*/'<ion-header>\n\n	<ion-navbar>\n		\n		<ion-buttons start>\n		<button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">\n		    <ion-icon name="arrow-back"></ion-icon>\n		    {{ \'Back\' | translate }}\n	    </button>\n\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n\n		</ion-buttons>\n\n	    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    	<ion-title *ngIf="!show_header_logo">{{title | translate}}</ion-title>\n\n	    <ion-buttons end>\n	    <button *ngIf="activityModal" ion-button (click)="doActivityModal($event)">\n			<ion-icon name="ios-create-outline"></ion-icon>\n		</button>\n		<button *ngIf="checkinModal" ion-button (click)="doCheckinModal($event)">\n			<ion-icon name="ios-navigate-outline"></ion-icon>\n		</button>\n		<button *ngIf="showShare" ion-button (click)="share()">\n			<ion-icon name="share"></ion-icon>\n		</button>\n		<button *ngIf="showCartLink" ion-button (click)="cartLink()">\n			<ion-icon name="cart"></ion-icon>\n		</button>\n		</ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content>\n    <iframe *ngIf="url" [src]="url" id="ap3-iframe" class="ap3-iframe"></iframe>\n</ion-content>'/*ion-inline-end:"/Users/macintosh/Documents/devapp/Properti-Go/src/pages/iframe/iframe.html"*/
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"/Users/macintosh/Documents/devapp/Properti-Go/src/pages/iframe/iframe.html"*/'<ion-header>\n\n	<ion-navbar>\n\n		<ion-buttons start>\n		<button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">\n		    <ion-icon name="arrow-back"></ion-icon>\n		    {{ \'Back\' | translate }}\n	    </button>\n\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n\n		</ion-buttons>\n\n	    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    	<ion-title *ngIf="!show_header_logo">{{title | translate}}</ion-title>\n\n	    <ion-buttons end>\n	    <button *ngIf="activityModal" ion-button (click)="doActivityModal($event)">\n			<ion-icon name="ios-create-outline"></ion-icon>\n		</button>\n		<button *ngIf="checkinModal" ion-button (click)="doCheckinModal($event)">\n			<ion-icon name="ios-navigate-outline"></ion-icon>\n		</button>\n		<button *ngIf="showShare" ion-button (click)="share()">\n			<ion-icon name="share"></ion-icon>\n		</button>\n		<button *ngIf="showCartLink" ion-button (click)="cartLink()">\n			<ion-icon name="cart"></ion-icon>\n		</button>\n		</ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content>\n    <iframe *ngIf="url" [src]="url" id="ap3-iframe" class="ap3-iframe" ></iframe>\n</ion-content>\n'/*ion-inline-end:"/Users/macintosh/Documents/devapp/Properti-Go/src/pages/iframe/iframe.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["g" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* Nav */],
