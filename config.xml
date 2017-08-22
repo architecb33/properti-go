@@ -12,7 +12,7 @@
     <preference name="targetSdkVersion" value="19" />
     <preference name="android-minSdkVersion" value="19" />
 
-    <gap:config-file platform="ios" parent="CFBundleShortVersionString"><string>100</string></gap:config-file>
+    <gap:config-file platform="ios" parent="CFBundleShortVersionString"><string>101</string></gap:config-file>
 
     <gap:plugin name="cordova-plugin-statusbar" source="npm" version="2.2.0" />
     <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" spec="5.1.6" />
