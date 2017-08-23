@@ -7,8 +7,8 @@ webpackJsonp([5],{
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__push_settings__ = __webpack_require__(379);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__push_settings__ = __webpack_require__(381);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PushSettingsModule", function() { return PushSettingsModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -44,7 +44,7 @@ PushSettingsModule = __decorate([
 
 /***/ }),
 
-/***/ 379:
+/***/ 381:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -164,7 +164,7 @@ var PushSettings = (function () {
 }());
 PushSettings = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/matt/projects/appp/ap3/src/pages/push-settings/push-settings.html"*/'<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      {{ \'Notification Settings\' | translate }}\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()">\n        <ion-icon name="close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n<ion-list>\n<ion-item *ngFor="let segment of segments">\n  <span item-left class="dot"></span>\n  <ion-label>{{segment.name}}</ion-label>\n  <ion-toggle [(ngModel)]="segment.isChecked" (ionChange)="toggleSegment($event, segment, segments)"></ion-toggle>\n</ion-item>\n<ion-item *ngIf="!segments">{{ \'No segments available\' | translate }}</ion-item>\n</ion-list>\n\n</ion-content>'/*ion-inline-end:"/Users/matt/projects/appp/ap3/src/pages/push-settings/push-settings.html"*/,
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/macintosh/Documents/devapp/Properti-Go/src/pages/push-settings/push-settings.html"*/'<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      {{ \'Notification Settings\' | translate }}\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()">\n        <ion-icon name="close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n<ion-list>\n<ion-item *ngFor="let segment of segments">\n  <span item-left class="dot"></span>\n  <ion-label>{{segment.name}}</ion-label>\n  <ion-toggle [(ngModel)]="segment.isChecked" (ionChange)="toggleSegment($event, segment, segments)"></ion-toggle>\n</ion-item>\n<ion-item *ngIf="!segments">{{ \'No segments available\' | translate }}</ion-item>\n</ion-list>\n\n</ion-content>'/*ion-inline-end:"/Users/macintosh/Documents/devapp/Properti-Go/src/pages/push-settings/push-settings.html"*/,
         selector: 'push-settings'
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],

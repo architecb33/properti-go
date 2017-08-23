@@ -31,6 +31,7 @@
     <gap:plugin name="cordova-plugin-splashscreen" source="npm" spec="4.0.1" />
     <gap:plugin name="cordova-plugin-actionsheet" source="npm" spec="2.3.3" />
     <gap:plugin source="git" spec="https://github.com/litehelpers/Cordova-sqlite-evcore-extbuild-free.git" />
+    <gap:plugin source="git" spec="https://github.com/ionic-team/cordova-plugin-wkwebview-engine.git" />
 
     <platform name="ios">
         <gap:plugin name="ionic-plugin-keyboard" source="npm" spec="2.2.1" />
@@ -47,6 +48,8 @@
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="webviewbounce" value="false" />
+    <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+
 
     <platform name="ios">
         <icon height="180" src="res/icon/ios/icon-60@3x.png" width="180" />
@@ -116,5 +119,10 @@
     </platform>
     <access origin="mailto:*" launch-external="yes" />
     <access origin="tel:*" launch-external="yes" />
+    
+    <allow-navigation href="http://localhost:8080/*"/>
+<feature name="CDVWKWebViewEngine">
+  <param name="ios-package" value="CDVWKWebViewEngine" />
+</feature>
 
 </widget>

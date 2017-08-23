@@ -7,8 +7,8 @@ webpackJsonp([9],{
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__custom_html_template__ = __webpack_require__(372);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__custom_html_template__ = __webpack_require__(374);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomHtmlTemplateModule", function() { return CustomHtmlTemplateModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -47,16 +47,15 @@ CustomHtmlTemplateModule = __decorate([
 
 /***/ }),
 
-/***/ 372:
+/***/ 374:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_header_logo_header_logo__ = __webpack_require__(236);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__ = __webpack_require__(62);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomHtmlTemplate; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -73,12 +72,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 /*
  * Template for creating custom HTML pages
  */
 var CustomHtmlTemplate = (function () {
-    function CustomHtmlTemplate(navParams, nav, modalCtrl, renderer, elementRef, viewCtrl, platform, translate, storage, events, toastCtrl, globalvars, headerLogoService) {
+    function CustomHtmlTemplate(navParams, nav, modalCtrl, renderer, elementRef, viewCtrl, platform, translate, storage, events, toastCtrl, headerLogoService) {
         this.navParams = navParams;
         this.nav = nav;
         this.modalCtrl = modalCtrl;
@@ -90,10 +88,10 @@ var CustomHtmlTemplate = (function () {
         this.storage = storage;
         this.events = events;
         this.toastCtrl = toastCtrl;
-        this.globalvars = globalvars;
         this.headerLogoService = headerLogoService;
         this.rtlBack = false;
-        this.show_segments = false;
+        this.pages = JSON.parse(window.localStorage.getItem('myappp'));
+        this.segments = JSON.parse(window.localStorage.getItem('segments'));
         this.show_header_logo = false;
         this.pagetitle = navParams.data.title;
         if (navParams.data.is_home == true) {
@@ -103,12 +101,6 @@ var CustomHtmlTemplate = (function () {
         if (platform.is('android')) {
             this.killVideos();
         }
-        this.pages = this.getPages(); // not just pages: this is the whole myappp data
-        this.menus = {
-            side: this.getSideMenu(),
-            tabs: this.getTabs()
-        };
-        this.segments = this.getSegments();
     }
     CustomHtmlTemplate.prototype.ngOnInit = function () {
         var slug = this.navParams.data.slug;
@@ -127,14 +119,90 @@ var CustomHtmlTemplate = (function () {
         this.listenFunc = this.renderer.listen(this.elementRef.nativeElement, 'click', function (event) {
             if (event.target.href && event.target.href.indexOf('http') >= 0) {
                 event.preventDefault();
-                if (event.target.target && event.target.target) {
-                    window.open(event.target.href, event.target.target);
-                }
-                else {
-                    window.open(event.target.href, '_blank');
-                }
+                window.open(event.target.href, '_blank');
             }
         });
+    };
+    CustomHtmlTemplate.prototype.pushPage = function (page) {
+        if (page.target === '_blank' && page.extra_classes.indexOf('system') >= 0) {
+            window.open(page.url, '_system', null);
+            return;
+        }
+        else if (page.target === '_blank') {
+            window.open(page.url, page.target, null);
+            return;
+        }
+        var opt = {};
+        if (this.platform.isRTL && this.platform.is('ios'))
+            opt = { direction: 'back' };
+        if (page.type === 'apppages' && page.page_type === 'list') {
+            this.nav.push('PostList', page, opt);
+        }
+        else if (page.type === 'apppages') {
+            this.nav.push('Page' + page.page_id, page, opt);
+        }
+        else if (page.url) {
+            this.nav.push('Iframe', page, opt);
+        }
+        else {
+            this.nav.push(page.component, page.navparams, opt);
+        }
+    };
+    CustomHtmlTemplate.prototype.openPage = function (page) {
+        if (page.target === '_blank' && page.extra_classes.indexOf('system') >= 0) {
+            window.open(page.url, '_system', null);
+            return;
+        }
+        else if (page.target === '_blank') {
+            window.open(page.url, page.target, null);
+            return;
+        }
+        if (page.type === 'apppages' && page.page_type === 'list') {
+            this.nav.setRoot('PostList', page);
+        }
+        else if (page.type === 'apppages') {
+            this.nav.setRoot('Page' + page.page_id, page);
+        }
+        else if (page.url) {
+            this.nav.setRoot('Iframe', page);
+        }
+        else {
+            this.nav.setRoot(page.component, page.navparams);
+        }
+    };
+    CustomHtmlTemplate.prototype.back = function () {
+        this.nav.pop();
+    };
+    CustomHtmlTemplate.prototype.mediaModal = function (src, img) {
+        if (img === void 0) { img = null; }
+        var modal = this.modalCtrl.create('MediaPlayer', { source: src, image: img });
+        modal.present();
+    };
+    CustomHtmlTemplate.prototype.updateData = function () {
+        window.localStorage.removeItem('myappp');
+        this.storage.remove('segments');
+        this.events.publish('data:update', true);
+    };
+    CustomHtmlTemplate.prototype.changeRTL = function (event, rtl) {
+        if (rtl) {
+            this.platform.setDir('rtl', true);
+        }
+        else {
+            this.platform.setDir('ltr', true);
+        }
+        this.storage.set('is_rtl', rtl);
+    };
+    CustomHtmlTemplate.prototype.showSegments = function () {
+        var modal = this.modalCtrl.create('PushSettings');
+        modal.present();
+    };
+    CustomHtmlTemplate.prototype.showLanguages = function () {
+        var modal = this.modalCtrl.create('LanguageSettings');
+        modal.present();
+    };
+    CustomHtmlTemplate.prototype.loginModal = function () {
+        this.myLoginModal = this.modalCtrl.create('LoginModal');
+        this.myLoginModal.present();
     };
     // changes the back button transition direction if app is RTL
     CustomHtmlTemplate.prototype.backRtlTransition = function () {
@@ -193,183 +261,13 @@ var CustomHtmlTemplate = (function () {
             //console.log(e)
         });
     };
-    /**
-     * Get side menu index by page slug
-     */
-    CustomHtmlTemplate.prototype.getMenuIndexBySlug = function (slug) {
-        return this.getIndexBySlug(slug, this.menus.side);
-    };
-    /**
-     * Get tab menu index by page slug
-     * @param slug page slug
-     */
-    CustomHtmlTemplate.prototype.getTabIndexBySlug = function (slug) {
-        return this.getIndexBySlug(slug, this.menus.tabs);
-    };
-    /**
-     * Side or tab menus
-     * @param slug page slug
-     * @param pages menu or tab pages
-     */
-    CustomHtmlTemplate.prototype.getIndexBySlug = function (slug, pages) {
-        var menu_index;
-        var count = 0;
-        if (!pages)
-            return menu_index;
-        for (var _i = 0, pages_1 = pages; _i < pages_1.length; _i++) {
-            var page = pages_1[_i];
-            if (page.slug && page.slug == slug) {
-                menu_index = count;
-            }
-            count++;
-        }
-        ;
-        if (!menu_index && menu_index !== 0)
-            console.log(pages); // you can find the slugs here
-        return menu_index;
-    };
-    CustomHtmlTemplate.prototype.getPage = function (page_slug) {
-        var _this = this;
-        var menu_index;
-        var page;
-        menu_index = this.getMenuIndexBySlug(page_slug);
-        if (menu_index || menu_index === 0) {
-            return this.menus.side[menu_index];
-        }
-        menu_index = this.getTabIndexBySlug(page_slug);
-        if (menu_index || menu_index === 0) {
-            return this.menus.tabs[menu_index];
-        }
-        // otherwise . . .
-        this.translate.get('Page not found').subscribe(function (text) {
-            _this.presentToast(text);
-        });
-        return false;
-    };
-    CustomHtmlTemplate.prototype.pushPage = function (page) {
-        if (typeof page === 'string') {
-            page = this.getPage(page);
-            if (page === false)
-                return;
-        }
-        if (page.target === '_blank' && page.extra_classes.indexOf('system') >= 0) {
-            window.open(page.url, '_system', null);
-            return;
-        }
-        else if (page.target === '_blank') {
-            window.open(page.url, page.target, null);
-            return;
-        }
-        var opt = {};
-        if (this.platform.isRTL && this.platform.is('ios'))
-            opt = { direction: 'back' };
-        if (page.type === 'apppages' && page.page_type === 'list') {
-            this.nav.push('PostList', page, opt);
-        }
-        else if (page.type === 'apppages') {
-            this.nav.push(this.getPageModuleName(page.page_id), page, opt);
-        }
-        else if (page.url) {
-            this.nav.push('Iframe', page, opt);
-        }
-        else {
-            this.nav.push(page.component, page.navparams, opt);
-        }
-    };
-    CustomHtmlTemplate.prototype.openPage = function (page) {
-        if (typeof page === 'string') {
-            page = this.getPage(page);
-            if (page === false)
-                return;
-        }
-        if (page.target === '_blank' && page.extra_classes.indexOf('system') >= 0) {
-            window.open(page.url, '_system', null);
-            return;
-        }
-        else if (page.target === '_blank') {
-            window.open(page.url, page.target, null);
-            return;
-        }
-        if (page.type === 'apppages' && page.page_type === 'list') {
-            this.nav.setRoot('PostList', page);
-        }
-        else if (page.type === 'apppages') {
-            this.nav.setRoot(this.getPageModuleName(page.page_id), page);
-        }
-        else if (page.url) {
-            this.nav.setRoot('Iframe', page);
-        }
-        else {
-            this.nav.setRoot(page.component, page.navparams);
-        }
-    };
-    CustomHtmlTemplate.prototype.back = function () {
-        this.nav.pop();
-    };
-    CustomHtmlTemplate.prototype.mediaModal = function (src, img) {
-        if (img === void 0) { img = null; }
-        var modal = this.modalCtrl.create('MediaPlayer', { source: src, image: img });
-        modal.present();
-    };
-    CustomHtmlTemplate.prototype.updateData = function () {
-        window.localStorage.removeItem('myappp');
-        this.storage.remove('segments');
-        this.events.publish('data:update', true);
-    };
-    CustomHtmlTemplate.prototype.changeRTL = function (event, rtl) {
-        if (rtl) {
-            this.platform.setDir('rtl', true);
-        }
-        else {
-            this.platform.setDir('ltr', true);
-        }
-        this.storage.set('is_rtl', rtl);
-    };
-    CustomHtmlTemplate.prototype.showSegments = function () {
-        var modal = this.modalCtrl.create('PushSettings');
-        modal.present();
-    };
-    CustomHtmlTemplate.prototype.showLanguages = function () {
-        var modal = this.modalCtrl.create('LanguageSettings');
-        modal.present();
-    };
-    CustomHtmlTemplate.prototype.loginModal = function () {
-        this.login_modal = this.modalCtrl.create('LoginModal');
-        this.login_modal.present();
-    };
-    CustomHtmlTemplate.prototype.getPages = function () {
-        if (!this.pages) {
-            this.pages = JSON.parse(window.localStorage.getItem('myappp'));
-        }
-        return this.pages;
-    };
-    CustomHtmlTemplate.prototype.getSegments = function () {
-        if (!this.segments)
-            this.segments = JSON.parse(window.localStorage.getItem('segments'));
-        return this.segments;
-    };
-    CustomHtmlTemplate.prototype.getSideMenu = function () {
-        var myappp = JSON.parse(window.localStorage.getItem('myappp'));
-        return myappp.menus.items;
-    };
-    CustomHtmlTemplate.prototype.getTabs = function () {
-        var myappp = JSON.parse(window.localStorage.getItem('myappp'));
-        return myappp.tab_menu.items;
-    };
-    CustomHtmlTemplate.prototype.getPageModuleName = function (page_id) {
-        console.log('isInProductionMode', this.globalvars.isInProductionMode);
-        if (this.globalvars.isInProductionMode)
-            return 'Page' + page_id;
-        else
-            return 'CustomPage';
-    };
     return CustomHtmlTemplate;
 }());
 CustomHtmlTemplate = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])({
         priority: 'high'
     }),
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/matt/projects/appp/ap3/src/pages/custom-html-template/custom-html-template.html"*/'<ion-header>\n\n  <ion-navbar>\n\n	<ion-buttons start>\n		<button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">\n			<ion-icon name="arrow-back"></ion-icon>\n			{{\'Back\' | translate }}\n		</button>\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n\n	</ion-buttons>\n\n	<img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    <ion-title *ngIf="!show_header_logo">{{pagetitle | translate}}</ion-title>\n\n  </ion-navbar>\n</ion-header>\n\n<ion-content [ngClass]="customClasses">\n\nContent goes here\n\n</ion-content>\n'/*ion-inline-end:"/Users/matt/projects/appp/ap3/src/pages/custom-html-template/custom-html-template.html"*/
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/macintosh/Documents/devapp/Properti-Go/src/pages/custom-html-template/custom-html-template.html"*/'<ion-header>\n\n  <ion-navbar>\n\n	<ion-buttons start>\n		<button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">\n			<ion-icon name="arrow-back"></ion-icon>\n			{{\'Back\' | translate }}\n		</button>\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n\n	</ion-buttons>\n\n	<img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    <ion-title *ngIf="!show_header_logo">{{pagetitle | translate}}</ion-title>\n\n  </ion-navbar>\n</ion-header>\n\n<ion-content [ngClass]="customClasses">\n\nContent goes here\n\n</ion-content>\n'/*ion-inline-end:"/Users/macintosh/Documents/devapp/Properti-Go/src/pages/custom-html-template/custom-html-template.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Nav */],
@@ -382,7 +280,6 @@ CustomHtmlTemplate = __decorate([
         __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Events */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */],
-        __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__["a" /* GlobalVars */],
         __WEBPACK_IMPORTED_MODULE_4__providers_header_logo_header_logo__["a" /* HeaderLogo */]])
 ], CustomHtmlTemplate);
 
