@@ -203,11 +203,15 @@ var Iframe = (function () {
         this.loaded = true;
     };
     Iframe.prototype.showSpinner = function () {
+        var _this = this;
         this.loading = this.loadingController.create({
             showBackdrop: false,
             dismissOnPageChange: false
         });
         this.loading.present();
+        setTimeout(function () {
+            _this.loading.dismiss();
+        }, 120000);
     };
     Iframe.prototype.ionSelected = function () {
         // fires when an active menu item is pressed again, causing a refresh

@@ -28619,6 +28619,12 @@ ion-list.listmainmenu .item-block .item-inner {
   }
   .ios div.scroll-content {
     margin-top: 0 !important;
+    height: 100vh;
+    width: 100vw;
+  }
+  .ios div.scroll-content.has_stretch_header_md,
+  .ios div.scroll-content.has_stretch_header_ios {
+    padding-top: 0 !important;
   }
 }
 
@@ -28635,6 +28641,12 @@ ion-list.listmainmenu .item-block .item-inner {
   }
   .md div.scroll-content {
     margin-top: 0 !important;
+    height: 100vh;
+    width: 100vw;
+  }
+  .md div.scroll-content.has_stretch_header_md,
+  .md div.scroll-content.has_stretch_header_ios {
+    padding-top: 0 !important;
   }
 }
 
@@ -28642,12 +28654,6 @@ ion-list.listmainmenu .item-block .item-inner {
   .md div.scroll-content {
     margin-top: 56px !important;
   }
-}
-
-/*REMOVE HEADER AND TAB ON LANDSCAPE - for stretchy header*/
-div.scroll-content.has_stretch_header_md,
-div.scroll-content.has_stretch_header_ios {
-  margin-top: 0 !important;
 }
 
 /*CUSTOM ICON*/
@@ -28966,6 +28972,12 @@ img.post-slider-featured.wp-post-image {
 }
 
 /*API DETAIL PAGE*/
+/*FIX MARGIN TOP - for stretchy header*/
+div.scroll-content.has_stretch_header_md,
+div.scroll-content.has_stretch_header_ios {
+  margin-top: 0 !important;
+}
+
 /*PADDING FOR CONTENT*/
 .scroll-content .selection {
   padding: 10vw;
