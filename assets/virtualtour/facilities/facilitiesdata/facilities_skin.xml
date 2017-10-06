@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.19">
+
+    
+  <!-- Spot Style - Default Point Spot Style -->
+  <style name="IconDefaultPointSpotStyle"
+         url="%FIRSTXML%/spots/hotspot_animated_user_defaultpoint0.png"
+         visible="false"
+         frame="0"
+         lastframe="19"
+         framewidth="64"
+         frameheight="64"
+         stopspotsequence="false"
+         crop="0|0|64|64"
+         alpha="0.8"
+         onloaded="startspotanimation(0.1);showPermanentTooltip(all);"
+         onover="onoverIconDefaultPointSpotStyle"
+         onout="onoutIconDefaultPointSpotStyle"
+
+         height="60"
+         width="60"
+         />
+
+
+  <action name="onoverIconDefaultPointSpotStyle">
+
+tween(alpha, 1);
+
+  </action>
+
+  <action name="onoutIconDefaultPointSpotStyle">
+
+    tween(alpha, 0.8);
+
+  </action>
+
+
+
+<!-- ********** -->
+<!-- WebVR Button -->
+<!-- id : webvrbutton -->
+<!-- ********** -->
+
+	<layer name="webvrbutton"
+		keep="true"
+		blocked="false"
+		url="%FIRSTXML%/graphics/webvrbutton/vrbutton.png" 
+		align="bottomright"
+		x="120"
+		y="15"
+		zorder="1"
+		visible="false"
+		onclick="js(accessWebVr());
+"
+
+		height="35"
+		width="35"
+		/>
+
+	<events name="webvrbuttonevents"
+		onvrunavailable="hidewebvrbutton(true);"
+		onTourStart="showwebvrbutton();"
+		hidetourcontrols="hidewebvrbutton();" 
+		showtourcontrols="showwebvrbutton();" 
+		keep="true" />
+	<action name="hidewebvrbutton">if(%1 == true,set(layer[webvrbutton].blocked, true););set(layer[webvrbutton].visible, false);</action>
+	<action name="showwebvrbutton">if(tour_displaycontrols,if(layer[webvrbutton].blocked == false,set(layer[webvrbutton].visible, true););,hidewebvrbutton(););</action>
+
+
+<!-- ********** -->
+<!-- Toggle Button -->
+<!-- id : togglebutton -->
+<!-- ********** -->
+
+
+
+  <layer name="togglebutton"
+         keep="true"
+         url="%FIRSTXML%/graphics/togglebutton/gyrobutton.png" 
+         align="bottomright"
+         x="72"
+         y="15"
+         zorder="2"
+         state="true"
+         onclick="togglebuttonOnClick"
+         onout=""
+         height="35"
+         width="35"
+         visible="false"
+         />
+
+  <action name="togglebuttonOnClick">
+    if (state,
+      set(state, false);disableGyroscope();
+
+
+      set(url,%FIRSTXML%/graphics/togglebutton/gyrobuttonoff.png);
+     ,
+      set(state, true);enableGyroscope();
+
+
+      set(url,%FIRSTXML%/graphics/togglebutton/gyrobutton.png);
+    );
+  </action>
+
+  <events name="togglebuttonevents" 
+    onTourStart="showtogglebutton();"
+    hidetourcontrols="hidetogglebutton();" 
+    showtourcontrols="showtogglebutton();" 
+    keep="true" />
+  <action name="hidetogglebutton">set(layer[togglebutton].visible, false);</action>
+  <action name="showtogglebutton">if(tour_displaycontrols,set(layer[togglebutton].visible, true);,hidetogglebutton(););</action>
+
+
+<!-- ********** -->
+<!-- menu button -->
+<!-- id : button -->
+<!-- ********** -->
+
+  <layer name="button"
+         keep="true"
+         url="%FIRSTXML%/graphics/button/openmenu.png" 
+         align="bottomright"
+         x="15"
+         y="15"
+         zorder="3"
+         visible="false"
+         onclick="buttonOnClick"
+         height="45"
+         width="45"
+         />
+  <action name="buttonOnClick">rg_show_thumbs_grid(true);
+
+  </action>
+
+  <events name="buttonevents" 
+    onTourStart="showbutton();"
+    keep="true" />
+  <action name="hidebutton">set(layer[button].visible, false);</action>
+  <action name="showbutton">set(layer[button].visible, true);</action>
+
+
+<!-- ********* -->
+<!-- Gyroscope -->
+<!-- ********* -->
+
+
+
+<plugin name="gyroscope"
+        url="%FIRSTXML%/graphics/gyro2.js"
+        keep="true"
+        devices="no-desktop.and.html5"
+
+        onunavailable="checkGyroUnavailable();"
+        sensor_mode="1"
+        friction="auto"
+        autocalibration="true"
+        touch_mode="full"
+        onavailable="delayedcall(1, checkGyroAvailability(););"
+        enabled="false"
+        activated="false"
+        />
+
+<events name="gyroscopeEvents" onnewpano="planarGyroscopeTest();" keep="true" />
+
+<action name="planarGyroscopeTest">
+  if(plugin[gyroscope],
+          if(scene[get(xml.scene)].full360,
+            set(sceneisfull360, false);
+            sub(viewhfov, panoview.hmax, panoview.hmin);
+            if (viewhfov == 360,
+              sub(viewvfov, panoview.vmax, panoview.vmin);
+              if (viewvfov == 180,
+                set(sceneisfull360, true);
+              );
+            );
+            if (sceneisfull360,
+              set(plugin[gyroscope].camroll, true);
+            ,
+              set(plugin[gyroscope].camroll, false);
+            );
+          ,
+            set(plugin[gyroscope].camroll, false);
+          );
+  );
+</action>
+
+<action name="changeGyroscopeState">
+  if(plugin[gyroscope],
+    if (plugin[gyroscope].isavailable,
+        if(%1,
+          set(plugin[gyroscope].activated,true);
+        ,
+          set(plugin[gyroscope].activated,false);
+        );
+        if (%1 != plugin[gyroscope].enabled,
+          if(plugin[gyroscope].activated,
+            switch(plugin[gyroscope].enabled);
+          ,
+            set(plugin[gyroscope].enabled, false);
+          );
+          if (plugin[gyroscope].enabled, events.dispatch(ongyroscopeon);, events.dispatch(ongyroscopeoff););
+        );
+    );
+  );
+</action>
+
+<action name="checkGyroAvailability">
+  if(plugin[gyroscope],
+    if (plugin[gyroscope].isavailable,
+
+      
+      set(sceneisfull360, false);
+      if (scene[get(xml.scene)].full360,
+        sub(viewhfov, panoview.hmax, panoview.hmin);
+        if (viewhfov == 360,
+          sub(viewvfov, panoview.vmax, panoview.vmin);
+          if (viewvfov == 180,
+            set(sceneisfull360, true);
+          );
+        );
+      );
+      set(delaythegyrocheck, false);
+      if (sceneisfull360 AND tour_firstlittleplanet, set(delaythegyrocheck, true));
+
+      ifnot(delaythegyrocheck,
+        
+        switch(plugin[gyroscope].enabled);
+        set(plugin[gyroscope].activated,true);
+        
+        set(tour_gyroscopedevices, true);
+        events.dispatch(ongyroscopeavailable);
+      ,
+        delayedcall(1, checkGyroAvailability(););
+      );
+    ,
+      set(tour_gyroscopedevices, false);
+    );
+    if (plugin[gyroscope].enabled, events.dispatch(ongyroscopeon);, events.dispatch(ongyroscopeoff););
+  ,
+    checkGyroUnavailable();
+  );
+</action>
+
+<action name="checkGyroUnavailable">
+  set(plugin[gyroscope].activated, false);
+  set(plugin[gyroscope].enabled, false);
+  set(tour_gyroscopedevices, false);
+  events.dispatch(ongyroscopeunavailable);
+</action>
+
+<!-- ********** -->
+<!-- Title -->
+<!-- id : title -->
+<!-- ********** -->
+
+  <events name="title_events" 
+    onTourStart="showtitle();"
+    hidetourcontrols="hidetitle();" 
+    showtourcontrols="showtitle();" 
+    onnewpano="updatetitle();"
+    changetourlanguage="changeLanguagetitle"
+    keep="true" />
+
+  <action name="hidetitle">set(layer[title].visible, false);</action>
+  <action name="showtitle">set(layer[title].visible, true );</action>
+
+  <action name="changeLanguagetitle">
+    updatetitle();
+  </action>
+
+  <action name="updatetitle">
+    getmessage(layer[title].html, get(scene[get(xml.scene)].titleid));
+    escape(layer[title].html);
+  </action>
+  <layer name="title" keep="true" zorder="5"
+         url="%FIRSTXML%/graphics/textfield.swf"
+         align="bottomleft" x="20" y="15" width="100%" autoheight="true"
+         background="false" capture="false" handcursor="false" selectable="false" enabled="false"
+         borderwidth="0"
+         alpha="1"
+         visible="false"
+         css="text-align:left;
+              color:#ffffff;
+              font-family:Europa;
+              font-size:20px;"/>
+
+<!-- ********** -->
+<!-- Loading Information -->
+<!-- id : loaderinfo -->
+<!-- ********** -->
+
+  <events name="loaderinfoevent" onxmlcomplete="loaderinfoupdate();" keep="true"/>
+
+  <action name="loaderinfoupdate">
+    if(scene[get(xml.scene)].video,
+      set(layer[loaderinfotextfield].visible, false);
+    ,
+      if (progress.progress == 1,
+        delayedcall(0.5, set(layer[loaderinfotextfield].visible, false); );
+      ,
+        set(layer[loaderinfotextfield].visible, true);
+      );
+      mul(progresstext, get(progress.progress),100);
+      roundval(progresstext);
+      txtadd(progresstext, get(progresstext), %);
+      set(layer[loaderinfotextfield].html, get(progresstext));
+      ifnot(progress.progress GE 1, delayedcall(0.01, loaderinfoupdate() ));
+    );
+  </action>
+
+  <layer name="loaderinfotextfield"
+         keep="true"
+         zorder="6"
+         url="%FIRSTXML%/graphics/textfield.swf"
+         align="center"
+         x="0"
+         y="0"
+         borderwidth="0"
+         background="false"
+         autoheight="true"
+         autowidth="auto"
+         capture="false"
+         handcursor="false"
+         selectable="false"
+         alpha="1"
+         visible="true"
+         css="
+         text-align:center;
+         color:#ffffff;
+         font-family:Europa;
+         font-size:16px;
+         "
+  />
+
+<!-- ************************* -->
+<!-- 360Images Responsive Grid Plugin -->
+<!-- ************************* -->
+<include url="%FIRSTXML%/graphics/360imagesgrid/gridmenu.xml"/>
+
+
+<responsive_grid  
+
+	button="false"
+
+	padding_top="10"
+	padding_bottom="0"
+	width_margin="65"
+	
+	vcenter="false"
+	
+	grid_bgcolor="0xffffff"
+	grid_bgalpha="0.90000762951094837"
+	
+	display_title="false"
+	grid_title="GRID MENU"
+	grid_title_css="color:#ffffff;font-family:Raleway;font-size:35px;"
+
+	group="true"
+	current="false"
+	
+	cat_container_height="35"
+	cat_container_border="0,0,0,0 0x665d4a 1.00"
+	cat_container_title_css="color:#665d4a;font-family:Europa;font-size:24px;"
+	cat_container_title_align="left"
+	
+	cat_container_border_height="0"
+
+	cat_desc_css="color:#ffffff;font-family:Raleway;font-size:14px;text-align:left"
+	
+	display_cat_desc="false"
+	
+	thumb_padding="5"
+	thumb_scale="75"
+	thumb_border_bgborder="5 0xc6a56d 1.00"
+	
+	display_thumb_title="false"
+	
+	
+	thumb_title_align="bottom"
+	thumb_title_x="0"
+	thumb_title_y="7"
+	
+	thumb_title_css="color:#ffffee;font-family:Europa;font-size:17px;text-align:left;"
+	
+	background="false"
+	border="false"
+	thumb_title_textshadow="1" thumb_title_textshadowrange="4.0" thumb_title_textshadowangle="45" thumb_title_textshadowcolor="0x000000" thumb_title_textshadowalpha="0.7000076295109483"
+
+	thumb_title_padding="6 10"
+	
+	
+	
+	display_thumb_desc="false"
+	display_thumb_desc_css="color:#ffffff;font-family:Raleway;font-size:15px;text-align:center"
+	
+	thumb_desc_bg_color="0x000000"
+	thumb_desc_bg_alpha="0.59999999999999998"
+	
+	thumb_desc_padding="8 15"
+/>
+
+
+
+	<!-- WebVR plugin for VR availability tests -->
+
+	<plugin name="ptpvrmode" devices="html5" keep="true"
+		url="%FIRSTXML%/graphics/webvr.js"
+		mobilevr_support="true"
+		mobilevr_fake_support="true"
+		vr_cursor=""
+		vr_cursor_enabled="false"
+		onavailable="delayedcall(1, checkVrAvailability(););"
+		onunavailable="checkVrUnavailable();"
+		/>
+	<action name="checkVrAvailability">
+		if(plugin[ptpvrmode],
+			if (plugin[ptpvrmode].isavailable,
+				set(tour_vrdevices, true);
+				events.dispatch(onvravailable);
+			,
+				set(tour_vrdevices, false);
+			);
+		,
+			checkVrUnavailable();
+		);
+	</action>
+	<action name="checkVrUnavailable">
+		set(tour_vrdevices, false);
+		events.dispatch(onvrunavailable);
+	</action>
+  <action name="enableGyroscope">
+    changeGyroscopeState(true);
+  </action>
+  <action name="disableGyroscope">
+    changeGyroscopeState(false);
+  </action>
+
+
+</krpano>
