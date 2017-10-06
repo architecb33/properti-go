@@ -10,8 +10,8 @@ webpackJsonp([9],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__globalvars_globalvars__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(36);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -131,39 +131,39 @@ webpackEmptyAsyncContext.id = 130;
 
 var map = {
 	"../pages/custom-pages/custom-page.module": [
-		317,
+		318,
 		1
 	],
 	"../pages/iframe/iframe.module": [
-		319,
+		320,
 		3
 	],
 	"../pages/language-settings/language-settings.module": [
-		320,
+		321,
 		8
 	],
 	"../pages/login-modal/login-modal.module": [
-		321,
+		322,
 		7
 	],
 	"../pages/media-player/media-player.module": [
-		318,
+		319,
 		0
 	],
 	"../pages/post-details/post-details.module": [
-		322,
+		323,
 		2
 	],
 	"../pages/post-list/post-list.module": [
-		323,
+		324,
 		6
 	],
 	"../pages/push-settings/push-settings.module": [
-		324,
+		325,
 		5
 	],
 	"../pages/tabs/tabs.module": [
-		325,
+		326,
 		4
 	]
 };
@@ -192,7 +192,7 @@ webpackAsyncContext.id = 170;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_camera__ = __webpack_require__(215);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_transfer__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_file__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_action_sheet__ = __webpack_require__(218);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -551,8 +551,8 @@ AppAds = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_facebook__ = __webpack_require__(222);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -842,7 +842,7 @@ AppWoo = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_device__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_device__ = __webpack_require__(37);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1262,7 +1262,7 @@ WPlogin = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoUtils; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1317,7 +1317,7 @@ VideoUtils = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(36);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1412,17 +1412,17 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* unused harmony export createTranslateLoader */
 /* unused harmony export MyMissingTranslationHandler */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_extend_menu_extend_menu__ = __webpack_require__(663);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_extend_menu_extend_menu__ = __webpack_require__(266);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(317);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngx_translate_core__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngx_translate_http_loader__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_action_sheet__ = __webpack_require__(218);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_device__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_device__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_transfer__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_file__ = __webpack_require__(217);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_admob__ = __webpack_require__(220);
@@ -1448,7 +1448,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_header_logo_header_logo__ = __webpack_require__(235);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_video_video_utils__ = __webpack_require__(258);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__providers_appgeo_appgeo__ = __webpack_require__(226);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__ionic_storage__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__ionic_storage__ = __webpack_require__(36);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1601,13 +1601,245 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 316:
+/***/ 266:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExtendMenuProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ExtendMenuProvider = (function () {
+    function ExtendMenuProvider() {
+    }
+    return ExtendMenuProvider;
+}());
+ExtendMenuProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [])
+], ExtendMenuProvider);
+
+// Default 3D menu type
+var Menu3DType = (function (_super) {
+    __extends(Menu3DType, _super);
+    function Menu3DType(menu, plt) {
+        var _this = _super.call(this, plt) || this;
+        var scale = 0.8;
+        var correction = (plt.width() - (scale * plt.width())) / 2;
+        var contentOpenedX = ((plt.width() - correction - 42) * (menu.isRightSide ? -1 : 1)) + 'px';
+        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
+        contentAni.fromTo('translateX', '0px', contentOpenedX);
+        contentAni.fromTo('scale', '1', scale);
+        _this.ani.add(contentAni);
+        return _this;
+    }
+    return Menu3DType;
+}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
+__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d', Menu3DType);
+// 3D open type
+var Menu3DOpenType = (function (_super) {
+    __extends(Menu3DOpenType, _super);
+    function Menu3DOpenType(menu, plt) {
+        var _this = _super.call(this, plt) || this;
+        var contentOpenedX = (menu.width() * (menu.isRightSide ? -1 : 1)) + 'px';
+        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
+        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
+        menuAni.fromTo('translateX', '-50%', '0');
+        menuAni.fromTo('perspective', '100em', '0');
+        menuAni.fromTo('rotateY', '90deg', '0');
+        _this.ani.add(menuAni);
+        contentAni.fromTo('translateX', '0', contentOpenedX);
+        _this.ani.add(contentAni);
+        return _this;
+    }
+    return Menu3DOpenType;
+}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
+__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-open', Menu3DOpenType);
+// 3D skew type
+var Menu3DSkewType = (function (_super) {
+    __extends(Menu3DSkewType, _super);
+    function Menu3DSkewType(menu, plt) {
+        var _this = _super.call(this, plt) || this;
+        var contentOpenedX = (menu.width() * (menu.isRightSide ? -1 : 1)) + 'px';
+        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
+        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
+        menuAni.fromTo('translateX', '-50%', '0');
+        menuAni.fromTo('perspective', '100em', '0');
+        menuAni.fromTo('rotateY', '-90deg', '0');
+        _this.ani.add(menuAni);
+        contentAni.fromTo('translateX', '0', contentOpenedX);
+        contentAni.fromTo('rotateY', '0', '45deg');
+        _this.ani.add(contentAni);
+        menu.getContentElement().parentElement.style.perspective = (plt.width() * 2) + 'px';
+        menu.getContentElement().style.transformOrigin = '0 50%';
+        return _this;
+    }
+    return Menu3DSkewType;
+}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
+__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-skew', Menu3DSkewType);
+// 3D fall down type
+var Menu3DFallDownType = (function (_super) {
+    __extends(Menu3DFallDownType, _super);
+    function Menu3DFallDownType(menu, plt) {
+        var _this = _super.call(this, plt) || this;
+        var contentOpenedX = (menu.width() * (menu.isRightSide ? -1 : 1)) + 'px';
+        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
+        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
+        menuAni.fromTo('translateY', '-100%', '0');
+        _this.ani.add(menuAni);
+        contentAni.fromTo('translateX', '0', contentOpenedX);
+        _this.ani.add(contentAni);
+        return _this;
+    }
+    return Menu3DFallDownType;
+}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
+__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-fall-down', Menu3DFallDownType);
+// 3D float up type
+var Menu3DFloatUpType = (function (_super) {
+    __extends(Menu3DFloatUpType, _super);
+    function Menu3DFloatUpType(menu, plt) {
+        var _this = _super.call(this, plt) || this;
+        var contentOpenedX = (menu.width() * (menu.isRightSide ? -1 : 1)) + 'px';
+        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
+        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
+        menuAni.fromTo('translateY', '100%', '0');
+        _this.ani.add(menuAni);
+        contentAni.fromTo('translateX', '0', contentOpenedX);
+        _this.ani.add(contentAni);
+        return _this;
+    }
+    return Menu3DFloatUpType;
+}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
+__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-float-up', Menu3DFloatUpType);
+//3D scale back type
+var Menu3DScaleBackType = (function (_super) {
+    __extends(Menu3DScaleBackType, _super);
+    function Menu3DScaleBackType(menu, plt) {
+        var _this = _super.call(this, plt) || this;
+        var scale = 0.8;
+        var correction = (plt.width() - (scale * plt.width())) / 2;
+        var contentOpenedX = ((plt.width() - correction - 60) * (menu.isRightSide ? -1 : 1)) + 'px';
+        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
+        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
+        var backdropApi = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getBackdropElement());
+        menuAni.fromTo('translateX', '-100%', '0');
+        _this.ani.add(menuAni);
+        contentAni.fromTo('translateX', '0', contentOpenedX);
+        contentAni.fromTo('scale', '1', scale);
+        contentAni.fromTo('rotateY', '0', '-45deg');
+        _this.ani.add(contentAni);
+        backdropApi.fromTo('opacity', 0.01, 0.35);
+        _this.ani.add(backdropApi);
+        menu.getContentElement().parentElement.style.perspective = (plt.width() * 3) + 'px';
+        menu.getContentElement().style.zIndex = '-2';
+        return _this;
+    }
+    return Menu3DScaleBackType;
+}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
+__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-scale-back', Menu3DScaleBackType);
+// 3D scale up type
+var Menu3DScaleUpType = (function (_super) {
+    __extends(Menu3DScaleUpType, _super);
+    function Menu3DScaleUpType(menu, plt) {
+        var _this = _super.call(this, plt) || this;
+        var contentOpenedX = (menu.width() * (menu.isRightSide ? -1 : 1)) + 'px';
+        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
+        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
+        menuAni.fromTo('translateX', '-25%', '0');
+        menuAni.fromTo('scale', '0.5', '1');
+        _this.ani.add(menuAni);
+        contentAni.fromTo('translateX', '0', contentOpenedX);
+        _this.ani.add(contentAni);
+        return _this;
+    }
+    return Menu3DScaleUpType;
+}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
+__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-scale-up', Menu3DScaleUpType);
+// 3D rotate out type
+var Menu3DRotateOutType = (function (_super) {
+    __extends(Menu3DRotateOutType, _super);
+    function Menu3DRotateOutType(menu, plt) {
+        var _this = _super.call(this, plt) || this;
+        var contentOpenedX = (menu.width() * (menu.isRightSide ? -1 : 1)) + 'px';
+        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
+        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
+        menuAni.fromTo('translateX', '-100%', '0');
+        menuAni.fromTo('perspective', '100em', '0');
+        menuAni.fromTo('rotateY', '-90deg', '0');
+        _this.ani.add(menuAni);
+        contentAni.fromTo('translateX', '0', contentOpenedX);
+        _this.ani.add(contentAni);
+        return _this;
+    }
+    return Menu3DRotateOutType;
+}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
+__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-rotate-out', Menu3DRotateOutType);
+// 3D reverse slide type
+var Menu3DReverseSlideType = (function (_super) {
+    __extends(Menu3DReverseSlideType, _super);
+    function Menu3DReverseSlideType(menu, plt) {
+        var _this = _super.call(this, plt) || this;
+        var contentOpenedX = (menu.width() * (menu.isRightSide ? -1 : 1)) + 'px';
+        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
+        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
+        menuAni.fromTo('translateX', '100%', '0');
+        _this.ani.add(menuAni);
+        contentAni.fromTo('translateX', '0', contentOpenedX);
+        _this.ani.add(contentAni);
+        return _this;
+    }
+    return Menu3DReverseSlideType;
+}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
+__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-reverse-slide', Menu3DReverseSlideType);
+// 3D content down type
+var Menu3DContentDownType = (function (_super) {
+    __extends(Menu3DContentDownType, _super);
+    function Menu3DContentDownType(menu, plt) {
+        var _this = _super.call(this, plt) || this;
+        var scale = 0.8;
+        var correction = (plt.height() - (scale * plt.height())) / 2;
+        var headerHeight = menu.getContentElement().getElementsByTagName('ion-navbar')[0].clientHeight;
+        var contentOpenedX = (plt.height() - correction - (headerHeight * scale)) + 'px';
+        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
+        contentAni.fromTo('translateY', '0', contentOpenedX);
+        contentAni.fromTo('scale', '1', scale);
+        _this.ani.add(contentAni);
+        return _this;
+    }
+    return Menu3DContentDownType;
+}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
+__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-content-down', Menu3DContentDownType);
+//# sourceMappingURL=extend-menu.js.map
+
+/***/ }),
+
+/***/ 317:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(14);
@@ -1621,13 +1853,13 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_appgeo_appgeo__ = __webpack_require__(226);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_status_bar__ = __webpack_require__(227);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_social_sharing__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_device__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_device__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_splash_screen__ = __webpack_require__(228);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_push__ = __webpack_require__(229);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_dialogs__ = __webpack_require__(230);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_network__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_keyboard__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_storage__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_storage__ = __webpack_require__(36);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2593,7 +2825,7 @@ __decorate([
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/macintosh/Documents/devapp/Properti-Go+/src/app/app.html"*/'\n<div [innerHTML]="styles"></div>\n\n<ion-menu type="3d-scale-up" [content]="content">\n\n\n\n  <ion-content>\n\n\n\n    <div class="sidemainmenu" *ngIf="login_data">\n\n      <ion-list class="listuser" *ngIf="login_data">\n\n        <ion-avatar *ngIf="login_data.avatar" (click)="pushPage(this.pages[1])">\n          <img class="userphoto" [src]="login_data.avatar" />\n          <img class="userphotoplus" src="assets/images/plussign.png">\n        </ion-avatar>\n\n        <button class="buttonprofile" ion-item *ngIf="login_data" (click)="pushPage(this.pages[2])">\n          {{login_data.message | translate}}\n        </button>\n\n        <button class="buttoncart" ion-item *ngIf="login_data" (click)="pushPage(this.pages[3])">\n          <ion-icon name="cart" item-left></ion-icon>\n          My Cart\n        </button>\n\n        <button class="buttonstatus" ion-item *ngIf="login_data" (click)="pushPage(this.pages[4])">\n          <ion-icon name="checkmark-circle-outline" item-left></ion-icon>\n          Booking Status\n        </button>\n\n        <button class="buttonlogin" ion-item *ngIf="login_data" (click)="openLoginModal()">\n          <ion-icon name="log-out" item-left></ion-icon>\n          {{ \'Logout\' | translate }}\n        </button>\n\n      </ion-list>\n\n    </div>\n\n\n\n    <div class="sidemainmenu" *ngIf="!login_data">\n\n      <ion-list class="listuser">\n\n        <ion-avatar>\n          <img class="userphoto" src="../assets/images/userphoto.jpg">\n        </ion-avatar>\n\n        <span class="loginmessage">You don’t have an account yet. Create one to unlock the booking feature.</span>\n\n        <button class="buttonlogin" ion-item (click)="pushPage(this.pages[2])">\n          {{ \'Login/register\' | translate }}\n        </button>\n\n      </ion-list>\n\n    </div>\n\n    <div class="intromenu">\n      <button class="buttonintro" ion-item (click)="pushPage(this.pages[5])">\n        Intro\n      </button>\n      <ion-icon id="share" (click)="shareApp()" name="share"></ion-icon>\n      <ion-icon id="about" (click)="pushPage(this.pages[6])" name="information-circle"></ion-icon>\n    </div>\n\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav id="nav" #content swipeBackEnabled="false"></ion-nav>\n'/*ion-inline-end:"/Users/macintosh/Documents/devapp/Properti-Go+/src/app/app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/macintosh/Documents/devapp/Properti-Go+/src/app/app.html"*/'\n<div [innerHTML]="styles"></div>\n\n<ion-menu type="3d-scale-up" [content]="content">\n\n\n\n  <ion-content>\n\n\n\n    <div class="sidemainmenu" *ngIf="login_data">\n\n      <ion-list class="listuser" *ngIf="login_data">\n\n        <ion-avatar *ngIf="login_data.avatar" (click)="pushPage(this.pages[1])">\n          <img class="userphoto" [src]="login_data.avatar" />\n          <img class="userphotoplus" src="assets/images/plussign.png">\n        </ion-avatar>\n\n        <button class="buttonprofile" ion-item *ngIf="login_data" (click)="pushPage(this.pages[2])">\n          {{login_data.message | translate}}\n        </button>\n\n        <button class="buttoncart" ion-item *ngIf="login_data" (click)="pushPage(this.pages[3])">\n          <ion-icon name="cart" item-left></ion-icon>\n          My Cart\n        </button>\n\n        <button class="buttonstatus" ion-item *ngIf="login_data" (click)="pushPage(this.pages[4])">\n          <ion-icon name="checkmark-circle-outline" item-left></ion-icon>\n          Booking Status\n        </button>\n\n        <button class="buttonlogin" ion-item *ngIf="login_data" (click)="openLoginModal()">\n          <ion-icon name="log-out" item-left></ion-icon>\n          {{ \'Logout\' | translate }}\n        </button>\n\n      </ion-list>\n\n    </div>\n\n\n\n    <div class="sidemainmenu" *ngIf="!login_data">\n\n      <ion-list class="listuser">\n\n        <ion-avatar>\n          <img class="userphoto" src="assets/images/userphoto.jpg">\n        </ion-avatar>\n\n        <span class="loginmessage">You don’t have an account yet. Create one to unlock the booking feature.</span>\n\n        <button class="buttonlogin" ion-item (click)="pushPage(this.pages[2])">\n          {{ \'Login/register\' | translate }}\n        </button>\n\n      </ion-list>\n\n    </div>\n\n    <div class="intromenu">\n      <button class="buttonintro" ion-item (click)="pushPage(this.pages[5])">\n        Intro\n      </button>\n      <ion-icon id="share" (click)="shareApp()" name="share"></ion-icon>\n      <ion-icon id="about" (click)="pushPage(this.pages[6])" name="information-circle"></ion-icon>\n    </div>\n\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav id="nav" #content swipeBackEnabled="false"></ion-nav>\n'/*ion-inline-end:"/Users/macintosh/Documents/devapp/Properti-Go+/src/app/app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* Platform */],
         __WEBPACK_IMPORTED_MODULE_5__providers_camera_app_camera__["a" /* AppCamera */],
@@ -2685,238 +2917,6 @@ GlobalVars = __decorate([
 ], GlobalVars);
 
 //# sourceMappingURL=globalvars.js.map
-
-/***/ }),
-
-/***/ 663:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExtendMenuProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var ExtendMenuProvider = (function () {
-    function ExtendMenuProvider() {
-    }
-    return ExtendMenuProvider;
-}());
-ExtendMenuProvider = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [])
-], ExtendMenuProvider);
-
-// Default 3D menu type
-var Menu3DType = (function (_super) {
-    __extends(Menu3DType, _super);
-    function Menu3DType(menu, plt) {
-        var _this = _super.call(this, plt) || this;
-        var scale = 0.8;
-        var correction = (plt.width() - (scale * plt.width())) / 2;
-        var contentOpenedX = ((plt.width() - correction - 42) * (menu.isRightSide ? -1 : 1)) + 'px';
-        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
-        contentAni.fromTo('translateX', '0px', contentOpenedX);
-        contentAni.fromTo('scale', '1', scale);
-        _this.ani.add(contentAni);
-        return _this;
-    }
-    return Menu3DType;
-}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
-__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d', Menu3DType);
-// 3D open type
-var Menu3DOpenType = (function (_super) {
-    __extends(Menu3DOpenType, _super);
-    function Menu3DOpenType(menu, plt) {
-        var _this = _super.call(this, plt) || this;
-        var contentOpenedX = (menu.width() * (menu.isRightSide ? -1 : 1)) + 'px';
-        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
-        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
-        menuAni.fromTo('translateX', '-50%', '0');
-        menuAni.fromTo('perspective', '100em', '0');
-        menuAni.fromTo('rotateY', '90deg', '0');
-        _this.ani.add(menuAni);
-        contentAni.fromTo('translateX', '0', contentOpenedX);
-        _this.ani.add(contentAni);
-        return _this;
-    }
-    return Menu3DOpenType;
-}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
-__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-open', Menu3DOpenType);
-// 3D skew type
-var Menu3DSkewType = (function (_super) {
-    __extends(Menu3DSkewType, _super);
-    function Menu3DSkewType(menu, plt) {
-        var _this = _super.call(this, plt) || this;
-        var contentOpenedX = (menu.width() * (menu.isRightSide ? -1 : 1)) + 'px';
-        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
-        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
-        menuAni.fromTo('translateX', '-50%', '0');
-        menuAni.fromTo('perspective', '100em', '0');
-        menuAni.fromTo('rotateY', '-90deg', '0');
-        _this.ani.add(menuAni);
-        contentAni.fromTo('translateX', '0', contentOpenedX);
-        contentAni.fromTo('rotateY', '0', '45deg');
-        _this.ani.add(contentAni);
-        menu.getContentElement().parentElement.style.perspective = (plt.width() * 2) + 'px';
-        menu.getContentElement().style.transformOrigin = '0 50%';
-        return _this;
-    }
-    return Menu3DSkewType;
-}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
-__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-skew', Menu3DSkewType);
-// 3D fall down type
-var Menu3DFallDownType = (function (_super) {
-    __extends(Menu3DFallDownType, _super);
-    function Menu3DFallDownType(menu, plt) {
-        var _this = _super.call(this, plt) || this;
-        var contentOpenedX = (menu.width() * (menu.isRightSide ? -1 : 1)) + 'px';
-        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
-        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
-        menuAni.fromTo('translateY', '-100%', '0');
-        _this.ani.add(menuAni);
-        contentAni.fromTo('translateX', '0', contentOpenedX);
-        _this.ani.add(contentAni);
-        return _this;
-    }
-    return Menu3DFallDownType;
-}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
-__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-fall-down', Menu3DFallDownType);
-// 3D float up type
-var Menu3DFloatUpType = (function (_super) {
-    __extends(Menu3DFloatUpType, _super);
-    function Menu3DFloatUpType(menu, plt) {
-        var _this = _super.call(this, plt) || this;
-        var contentOpenedX = (menu.width() * (menu.isRightSide ? -1 : 1)) + 'px';
-        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
-        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
-        menuAni.fromTo('translateY', '100%', '0');
-        _this.ani.add(menuAni);
-        contentAni.fromTo('translateX', '0', contentOpenedX);
-        _this.ani.add(contentAni);
-        return _this;
-    }
-    return Menu3DFloatUpType;
-}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
-__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-float-up', Menu3DFloatUpType);
-//3D scale back type
-var Menu3DScaleBackType = (function (_super) {
-    __extends(Menu3DScaleBackType, _super);
-    function Menu3DScaleBackType(menu, plt) {
-        var _this = _super.call(this, plt) || this;
-        var scale = 0.8;
-        var correction = (plt.width() - (scale * plt.width())) / 2;
-        var contentOpenedX = ((plt.width() - correction - 60) * (menu.isRightSide ? -1 : 1)) + 'px';
-        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
-        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
-        var backdropApi = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getBackdropElement());
-        menuAni.fromTo('translateX', '-100%', '0');
-        _this.ani.add(menuAni);
-        contentAni.fromTo('translateX', '0', contentOpenedX);
-        contentAni.fromTo('scale', '1', scale);
-        contentAni.fromTo('rotateY', '0', '-45deg');
-        _this.ani.add(contentAni);
-        backdropApi.fromTo('opacity', 0.01, 0.35);
-        _this.ani.add(backdropApi);
-        menu.getContentElement().parentElement.style.perspective = (plt.width() * 3) + 'px';
-        menu.getContentElement().style.zIndex = '-2';
-        return _this;
-    }
-    return Menu3DScaleBackType;
-}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
-__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-scale-back', Menu3DScaleBackType);
-// 3D scale up type
-var Menu3DScaleUpType = (function (_super) {
-    __extends(Menu3DScaleUpType, _super);
-    function Menu3DScaleUpType(menu, plt) {
-        var _this = _super.call(this, plt) || this;
-        var contentOpenedX = (menu.width() * (menu.isRightSide ? -1 : 1)) + 'px';
-        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
-        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
-        menuAni.fromTo('translateX', '-25%', '0');
-        menuAni.fromTo('scale', '0.5', '1');
-        _this.ani.add(menuAni);
-        contentAni.fromTo('translateX', '0', contentOpenedX);
-        _this.ani.add(contentAni);
-        return _this;
-    }
-    return Menu3DScaleUpType;
-}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
-__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-scale-up', Menu3DScaleUpType);
-// 3D rotate out type
-var Menu3DRotateOutType = (function (_super) {
-    __extends(Menu3DRotateOutType, _super);
-    function Menu3DRotateOutType(menu, plt) {
-        var _this = _super.call(this, plt) || this;
-        var contentOpenedX = (menu.width() * (menu.isRightSide ? -1 : 1)) + 'px';
-        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
-        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
-        menuAni.fromTo('translateX', '-100%', '0');
-        menuAni.fromTo('perspective', '100em', '0');
-        menuAni.fromTo('rotateY', '-90deg', '0');
-        _this.ani.add(menuAni);
-        contentAni.fromTo('translateX', '0', contentOpenedX);
-        _this.ani.add(contentAni);
-        return _this;
-    }
-    return Menu3DRotateOutType;
-}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
-__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-rotate-out', Menu3DRotateOutType);
-// 3D reverse slide type
-var Menu3DReverseSlideType = (function (_super) {
-    __extends(Menu3DReverseSlideType, _super);
-    function Menu3DReverseSlideType(menu, plt) {
-        var _this = _super.call(this, plt) || this;
-        var contentOpenedX = (menu.width() * (menu.isRightSide ? -1 : 1)) + 'px';
-        var menuAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getMenuElement());
-        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
-        menuAni.fromTo('translateX', '100%', '0');
-        _this.ani.add(menuAni);
-        contentAni.fromTo('translateX', '0', contentOpenedX);
-        _this.ani.add(contentAni);
-        return _this;
-    }
-    return Menu3DReverseSlideType;
-}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
-__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-reverse-slide', Menu3DReverseSlideType);
-// 3D content down type
-var Menu3DContentDownType = (function (_super) {
-    __extends(Menu3DContentDownType, _super);
-    function Menu3DContentDownType(menu, plt) {
-        var _this = _super.call(this, plt) || this;
-        var scale = 0.8;
-        var correction = (plt.height() - (scale * plt.height())) / 2;
-        var headerHeight = menu.getContentElement().getElementsByTagName('ion-navbar')[0].clientHeight;
-        var contentOpenedX = (plt.height() - correction - (headerHeight * scale)) + 'px';
-        var contentAni = new __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Animation */](plt, menu.getContentElement());
-        contentAni.fromTo('translateY', '0', contentOpenedX);
-        contentAni.fromTo('scale', '1', scale);
-        _this.ani.add(contentAni);
-        return _this;
-    }
-    return Menu3DContentDownType;
-}(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuType */]));
-__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */].registerType('3d-content-down', Menu3DContentDownType);
-//# sourceMappingURL=extend-menu.js.map
 
 /***/ })
 

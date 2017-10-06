@@ -1,17 +1,17 @@
 webpackJsonp([1],{
 
-/***/ 317:
+/***/ 318:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomPageModule", function() { return CustomPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index__ = __webpack_require__(373);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index__ = __webpack_require__(374);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__custom_page__ = __webpack_require__(379);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__custom_page__ = __webpack_require__(380);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -51,7 +51,7 @@ CustomPageModule = __decorate([
 
 /***/ }),
 
-/***/ 346:
+/***/ 347:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59,8 +59,8 @@ CustomPageModule = __decorate([
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(47);
 var http_1 = __webpack_require__(14);
-var index_1 = __webpack_require__(374);
-var Utils_1 = __webpack_require__(377);
+var index_1 = __webpack_require__(375);
+var Utils_1 = __webpack_require__(378);
 var DYNAMIC_SELECTOR = 'DynamicComponent';
 var DynamicComponentMetadata = (function () {
     function DynamicComponentMetadata(selector, template) {
@@ -248,7 +248,7 @@ exports.DynamicComponent = DynamicComponent;
 
 /***/ }),
 
-/***/ 347:
+/***/ 348:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -273,29 +273,16 @@ exports.PropertyAnnotationFactory = PropertyAnnotationFactory;
 
 /***/ }),
 
-/***/ 373:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var DynamicComponent_1 = __webpack_require__(346);
-exports.DynamicComponent = DynamicComponent_1.DynamicComponent;
-exports.DynamicComponentMetadata = DynamicComponent_1.DynamicComponentMetadata;
-var DynamicComponentModule_1 = __webpack_require__(378);
-exports.DynamicComponentModule = DynamicComponentModule_1.DynamicComponentModule;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
 /***/ 374:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var MetadataHelper_1 = __webpack_require__(375);
-exports.MetadataHelper = MetadataHelper_1.MetadataHelper;
-var MetadataFactory_1 = __webpack_require__(347);
-exports.PropertyAnnotationFactory = MetadataFactory_1.PropertyAnnotationFactory;
+var DynamicComponent_1 = __webpack_require__(347);
+exports.DynamicComponent = DynamicComponent_1.DynamicComponent;
+exports.DynamicComponentMetadata = DynamicComponent_1.DynamicComponentMetadata;
+var DynamicComponentModule_1 = __webpack_require__(379);
+exports.DynamicComponentModule = DynamicComponentModule_1.DynamicComponentModule;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -305,8 +292,21 @@ exports.PropertyAnnotationFactory = MetadataFactory_1.PropertyAnnotationFactory;
 
 "use strict";
 
-var Utils_1 = __webpack_require__(376);
-var MetadataFactory_1 = __webpack_require__(347);
+var MetadataHelper_1 = __webpack_require__(376);
+exports.MetadataHelper = MetadataHelper_1.MetadataHelper;
+var MetadataFactory_1 = __webpack_require__(348);
+exports.PropertyAnnotationFactory = MetadataFactory_1.PropertyAnnotationFactory;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 376:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Utils_1 = __webpack_require__(377);
+var MetadataFactory_1 = __webpack_require__(348);
 var MetadataHelper = (function () {
     function MetadataHelper() {
     }
@@ -347,36 +347,6 @@ exports.MetadataHelper = MetadataHelper;
 
 /***/ }),
 
-/***/ 376:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Utils = (function () {
-    function Utils() {
-    }
-    Utils.isPresent = function (obj) {
-        return obj !== undefined && obj !== null;
-    };
-    Utils.isUndefined = function (obj) {
-        return obj === undefined;
-    };
-    Utils.isString = function (obj) {
-        return typeof obj === 'string';
-    };
-    Utils.isFunction = function (obj) {
-        return typeof obj === 'function';
-    };
-    Utils.isArray = function (obj) {
-        return Array.isArray(obj);
-    };
-    return Utils;
-}());
-exports.Utils = Utils;
-//# sourceMappingURL=Utils.js.map
-
-/***/ }),
-
 /***/ 377:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -412,8 +382,38 @@ exports.Utils = Utils;
 
 "use strict";
 
+var Utils = (function () {
+    function Utils() {
+    }
+    Utils.isPresent = function (obj) {
+        return obj !== undefined && obj !== null;
+    };
+    Utils.isUndefined = function (obj) {
+        return obj === undefined;
+    };
+    Utils.isString = function (obj) {
+        return typeof obj === 'string';
+    };
+    Utils.isFunction = function (obj) {
+        return typeof obj === 'function';
+    };
+    Utils.isArray = function (obj) {
+        return Array.isArray(obj);
+    };
+    return Utils;
+}());
+exports.Utils = Utils;
+//# sourceMappingURL=Utils.js.map
+
+/***/ }),
+
+/***/ 379:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 var core_1 = __webpack_require__(0);
-var DynamicComponent_1 = __webpack_require__(346);
+var DynamicComponent_1 = __webpack_require__(347);
 var DynamicComponentModule = (function () {
     function DynamicComponentModule() {
     }
@@ -436,15 +436,15 @@ exports.DynamicComponentModule = DynamicComponentModule;
 
 /***/ }),
 
-/***/ 379:
+/***/ 380:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_header_logo_header_logo__ = __webpack_require__(235);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__ = __webpack_require__(62);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
