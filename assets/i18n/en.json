@@ -1,4 +1,5 @@
 {
+	"Language Name": "English",
 	"Login": "Login",
 	"Logout": "Logout",
 	"Back": "Back",
@@ -8,5 +9,10 @@
 	"Media Player": "Media Player",
 	"Username": "Username",
 	"Password": "Password",
-	"Click here to logout": "Click here to logout"
+	"Click here to logout": "Click here to logout",
+	"You appear to be offline, app functionality may be limited.": "You appear to be offline, app functionality may be limited.",
+	"Check in successful!": "Check in successful!",
+	"Login successful": "Login successful",
+	"Logout successful": "Logout successful",
+	"Done": "Done"
 }
