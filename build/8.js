@@ -1,6 +1,6 @@
 webpackJsonp([8],{
 
-/***/ 320:
+/***/ 321:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LanguageSettingsModule", function() { return LanguageSettingsModule; });
 /* harmony export (immutable) */ __webpack_exports__["createTranslateLoader"] = createTranslateLoader;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__language_settings__ = __webpack_require__(655);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__language_settings__ = __webpack_require__(656);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_http_loader__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(14);
@@ -36,7 +36,7 @@ LanguageSettingsModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__language_settings__["a" /* LanguageSettings */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__language_settings__["a" /* LanguageSettings */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__language_settings__["a" /* LanguageSettings */]),
             __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["c" /* TranslateModule */].forChild({
                 loader: {
                     provide: __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateLoader */],
@@ -59,14 +59,14 @@ function createTranslateLoader(http) {
 
 /***/ }),
 
-/***/ 655:
+/***/ 656:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LanguageSettings; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(114);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -136,13 +136,13 @@ var LanguageSettings = (function () {
     return LanguageSettings;
 }());
 LanguageSettings = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/matt/projects/appp/ap3/src/pages/language-settings/language-settings.html"*/'<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      {{ \'Language Settings\' | translate }}\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()">\n        <ion-icon name="close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n<ion-list radio-group [(ngModel)]="language">\n<ion-item *ngFor="let language of languages">\n  <ion-label>{{language.name}}</ion-label>\n  <ion-radio (ionSelect)="toggleLanguage($event, language)" value="{{language.code}}" [checked]="language.checked"></ion-radio>\n</ion-item>\n<ion-item *ngIf="!languages">{{ \'No languages available\' | translate }}</ion-item>\n</ion-list>\n\n</ion-content>'/*ion-inline-end:"/Users/matt/projects/appp/ap3/src/pages/language-settings/language-settings.html"*/,
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/macintosh/Documents/devapp/Properti-Go+/src/pages/language-settings/language-settings.html"*/'<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      {{ \'Language Settings\' | translate }}\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()">\n        <ion-icon name="close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n<ion-list radio-group [(ngModel)]="language">\n<ion-item *ngFor="let language of languages">\n  <ion-label>{{language.name}}</ion-label>\n  <ion-radio (ionSelect)="toggleLanguage($event, language)" value="{{language.code}}" [checked]="language.checked"></ion-radio>\n</ion-item>\n<ion-item *ngIf="!languages">{{ \'No languages available\' | translate }}</ion-item>\n</ion-list>\n\n</ion-content>'/*ion-inline-end:"/Users/macintosh/Documents/devapp/Properti-Go+/src/pages/language-settings/language-settings.html"*/,
         selector: 'language-settings'
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ViewController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ToastController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* ViewController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* ToastController */],
         __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["d" /* TranslateService */]])
 ], LanguageSettings);
 

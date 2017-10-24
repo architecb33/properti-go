@@ -1,15 +1,15 @@
 webpackJsonp([7],{
 
-/***/ 321:
+/***/ 322:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginModalModule", function() { return LoginModalModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_modal__ = __webpack_require__(656);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_modal__ = __webpack_require__(657);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -31,7 +31,7 @@ LoginModalModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3__login_modal__["a" /* LoginModal */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__login_modal__["a" /* LoginModal */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__login_modal__["a" /* LoginModal */]),
             __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateModule */].forChild()
         ],
         exports: [
@@ -44,16 +44,16 @@ LoginModalModule = __decorate([
 
 /***/ }),
 
-/***/ 656:
+/***/ 657:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginModal; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_wplogin_wplogin__ = __webpack_require__(257);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__(114);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -182,14 +182,14 @@ var LoginModal = (function () {
     return LoginModal;
 }());
 LoginModal = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-login-modal',template:/*ion-inline-start:"/Users/matt/projects/appp/ap3/src/pages/login-modal/login-modal.html"*/'<ion-header>\n\n  <ion-toolbar>\n  \n    <ion-title>{{ \'Login\' | translate }}</ion-title>\n\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()">\n        <ion-icon name="close"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n<ion-content>\n\n	<form (ngSubmit)="doLogin()" padding *ngIf="!login_data">\n      <ion-item>\n        <ion-label stacked>{{ \'Username\' | translate }}</ion-label>\n        <ion-input type="text" [(ngModel)]="login.user" name="user" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>{{ \'Password\' | translate }}</ion-label>\n        <ion-input type="password" [(ngModel)]="login.pass" name="pass" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>\n      </ion-item>\n      \n      <div padding>\n      <button ion-button type="submit" block>{{ \'Submit\' | translate }}</button>\n      </div>\n\n    </form>\n	\n	<div padding *ngIf="login_data">\n		{{login_data.message}}\n    	<button ion-button block (click)="doLogout()">{{ \'Click here to logout\' | translate }}</button>\n    </div>\n\n</ion-content>'/*ion-inline-end:"/Users/matt/projects/appp/ap3/src/pages/login-modal/login-modal.html"*/
+        selector: 'page-login-modal',template:/*ion-inline-start:"/Users/macintosh/Documents/devapp/Properti-Go+/src/pages/login-modal/login-modal.html"*/'<ion-header>\n\n  <ion-toolbar>\n\n\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()">\n        <ion-icon name="close"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n<div class="loginheader"></div>\n\n\n<ion-content>\n\n	<form class="divpopup" (ngSubmit)="doLogin()" padding *ngIf="!login_data">\n      <ion-item>\n        <ion-label class="usernamewelcome" stacked>{{ \'Username\' | translate }}</ion-label>\n        <ion-input class="usernamename" type="text" [(ngModel)]="login.user" name="user" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label class="usernamewelcome" stacked>{{ \'Password\' | translate }}</ion-label>\n        <ion-input class="usernamename" type="password" [(ngModel)]="login.pass" name="pass" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>\n      </ion-item>\n\n      <div padding>\n      <button class="buttonpopup" ion-button type="submit" block>{{ \'Submit\' | translate }}</button>\n      </div>\n\n    </form>\n\n	<div class="divpopup" padding *ngIf="login_data">\n    <div class="usernamewelcome">{{ \'See you again soon,\' | translate }}</div>\n		<div class="usernamename">{{login_data.message}}.</div>\n	<br>\n      	<button class="buttonpopup" ion-button block (click)="doLogout()">{{ \'Click here to logout\' | translate }}</button>\n    </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/macintosh/Documents/devapp/Properti-Go+/src/pages/login-modal/login-modal.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ViewController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* ViewController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* LoadingController */],
         __WEBPACK_IMPORTED_MODULE_2__providers_wplogin_wplogin__["a" /* WPlogin */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */],
         __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__["d" /* TranslateService */],
         __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__["a" /* Device */]])
